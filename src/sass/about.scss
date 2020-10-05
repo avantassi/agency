@@ -1,0 +1,12 @@
+.about{
+    background-color: $black;
+    padding-bottom: 50px;
+
+    &__descr{
+        font-size: 18px;
+        font-weight: 300;
+        color: $lightgray;
+        line-height: 36px;
+        text-align: justify;
+    }
+}

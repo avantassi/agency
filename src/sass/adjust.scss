@@ -1,0 +1,120 @@
+*{box-sizing: border-box;}
+
+html{
+  font-size: 16px;
+}
+
+html, body{
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  margin: 0;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  color: $gray-text;
+  background-color: $lightgray-bg;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: normal;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul li {list-style: none;}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.container{
+  margin: 0 auto;
+  max-width: 1140px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // align-items: center;
+  position: relative;
+
+  &--row{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &--end{
+    align-items: flex-end;
+  }
+}
+
+.wrapper{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100%;
+}
+
+.maincontent{
+  height: 100%;
+  min-height: 650px;
+}
+
+.wrap{
+  display: flex;
+  align-items: center;
+}
+
+.btn{
+  display: flex;
+  max-width: 350px;
+  background-color: $gray-bg;
+  background: linear-gradient( 77deg, $gray-bg 86%, transparent 86.2%, transparent 86.4%, $orange-bg 86.8%, $orange-bg 87.6%, transparent 87.8%) no-repeat right top / cover;
+  color: $white;
+  font-size: 18px;
+  font-weight: 300;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 20px 0 20px 40px;
+  transition: .2s;
+  margin: 30px 0 40px 0;
+  margin-left: auto;
+
+  &:hover{
+    background: linear-gradient( 77deg, $orange-bg 86%, transparent 86.2%, transparent 86.4%, $orange-bg 86.8%, $orange-bg 87.6%, transparent 87.8%) no-repeat right top / cover;
+  }
+
+  &--reverse{
+    justify-content: center;
+    background: linear-gradient( 77deg, transparent 12.2%, $orange-bg 12.4%, $orange-bg 13.2%, transparent 13.6%, transparent 13.8%, $gray-bg 14%) no-repeat right top / cover;
+  }
+
+  &:hover{
+    background: linear-gradient( 77deg, transparent 12.2%, $orange-bg 12.4%, $orange-bg 13.2%, transparent 13.6%, transparent 13.8%, $orange-bg 14%) no-repeat right top / cover;
+  }
+}
+
+.first-title{
+  color: $white;
+  font-size: 72px;
+  text-transform: uppercase;
+  margin: 220px 0;
+}
+
+.second-title{
+  color: $darkblue;
+  font-size: 48px;
+  text-transform: uppercase;
+  margin: 40px 0;
+}
+
+.third-title{
+
+}

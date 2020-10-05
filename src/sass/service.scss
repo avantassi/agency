@@ -1,0 +1,46 @@
+.service-bg__wrap{
+    background-color: $lightgray-bg;
+}
+
+.service-bg{
+    background-color: $lightgray-bg;
+    padding: 30px 0;
+    position: relative;
+    margin-bottom: 40px;
+    overflow: hidden;
+
+    &:last-of-type{
+        margin-bottom: 0;
+    }
+}
+
+.service{
+    background-color: $white;
+
+    &__wrap{
+        display: flex;
+    }
+
+    &__descr-wrap{
+        max-width: 45%;
+    }
+
+    &__descr{
+        color: $gray-text;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 30px;
+    }
+
+    &__img{
+        position: absolute;
+        right: 0;
+        max-width: 50%;
+        top: 0;
+
+        &--reverse{
+            right: auto;
+            left: 0;
+        }
+    }
+}
