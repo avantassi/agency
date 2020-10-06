@@ -118,6 +118,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+        text-align: end;
     }
     
     .menu__link{
@@ -174,5 +175,8 @@
         bottom: 30px;
         text-align: center;
         padding: 0 20px;
+        width: 100%;
+        left: 50%;
+        margin-left: -250px;
     }
 }

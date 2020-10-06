@@ -87,19 +87,50 @@ p {
   text-decoration: none;
   text-transform: uppercase;
   padding: 20px 0 20px 40px;
-  transition: .2s;
+  // transition: background 3s, ease-out 2.5s;
+  // transition-delay: 2.2s;
   margin: 30px 0 40px 0;
   margin-left: auto;
   border: none;
   font: 300 18px 'Open Sans';
   outline: none;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
+
+  &:before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( 77deg, $orange-bg 86%, transparent 86.2%, transparent 86.4%, $orange-bg 86.8%, $orange-bg 87.6%, transparent 87.8%) no-repeat right top / cover;
+    transition: opacity 0.2s ease-out;
+    z-index: 2;
+    opacity: 0;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  span {
+    position: relative;
+    z-index: 3;
+  }
 
   @include notebook{
     margin: 30px auto 40px;
     background: $gray-bg;
     box-shadow: 0 3px 0 $white, 0 5px 0 $orange-text;
     padding: 20px 0;
+    transition: 0.2s;
+    justify-content: center;
+
+    &:before{
+      display: none;
+    }
 
     &:hover{
       background: $orange-bg;
@@ -111,16 +142,38 @@ p {
     width: 230px;
   }
 
-  &:hover{
-    background: linear-gradient( 77deg, $orange-bg 86%, transparent 86.2%, transparent 86.4%, $orange-bg 86.8%, $orange-bg 87.6%, transparent 87.8%) no-repeat right top / cover;
-  }
+  // &:hover{
+  //   background: linear-gradient( 77deg, $orange-bg 86%, transparent 86.2%, transparent 86.4%, $orange-bg 86.8%, $orange-bg 87.6%, transparent 87.8%) no-repeat right top / cover;
+  // }
 
   &--reverse{
     justify-content: center;
     background: linear-gradient( 77deg, transparent 12.2%, $orange-bg 12.4%, $orange-bg 13.2%, transparent 13.6%, transparent 13.8%, $gray-bg 14%) no-repeat right top / cover;
   
-    &:hover{
+    // &:hover{
+    //   background: linear-gradient( 77deg, transparent 12.2%, $orange-bg 12.4%, $orange-bg 13.2%, transparent 13.6%, transparent 13.8%, $orange-bg 14%) no-repeat right top / cover;
+    // }
+
+    &:before{
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background: linear-gradient( 77deg, transparent 12.2%, $orange-bg 12.4%, $orange-bg 13.2%, transparent 13.6%, transparent 13.8%, $orange-bg 14%) no-repeat right top / cover;
+      transition: opacity 0.2s ease-out;
+      z-index: 2;
+      opacity: 0;
+    }
+  
+    &:hover::before {
+      opacity: 1;
+    }
+  
+    span {
+      position: relative;
+      z-index: 3;
     }
   }
 
@@ -164,6 +217,7 @@ p {
 
   @include tablets{
     margin-bottom: 60px;
+    font-size: 36px;
   }
 }
 

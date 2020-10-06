@@ -1,55 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function(){
-//     var scrollbar = document.body.clientWidth - window.innerWidth + 'px';
-//     console.log(scrollbar);
-//     document.querySelector('[href="#openModal"]').addEventListener('click',function(){
-//       document.body.style.overflow = 'hidden';
-//       document.querySelector('#openModal').style.marginLeft = scrollbar;
-//     });
-//     document.querySelector('[href="#close"]').addEventListener('click',function(){
-//       document.body.style.overflow = 'visible';
-//       document.querySelector('#openModal').style.marginLeft = '0px';
-//     });
-// });
-
-// document.addEventListener("DOMContentLoaded", function(){
-//     var scrollbar = document.body.clientWidth - window.innerWidth + 'px';
-//     console.log(scrollbar);
-//     document.querySelector('[href="#openModal2"]').addEventListener('click',function(){
-//       document.body.style.overflow = 'hidden';
-//       document.querySelector('#openModal2').style.marginLeft = scrollbar;
-//     });
-//     document.querySelector('[href="#close2"]').addEventListener('click',function(){
-//       document.body.style.overflow = 'visible';
-//       document.querySelector('#openModal2').style.marginLeft = '0px';
-//     });
-// });
-
-// document.addEventListener("DOMContentLoaded", function(){
-//     var scrollbar = document.body.clientWidth - window.innerWidth + 'px';
-//     console.log(scrollbar);
-//     document.querySelector('[href="#openModal3"]').addEventListener('click',function(){
-//       document.body.style.overflow = 'hidden';
-//       document.querySelector('#openModal3').style.marginLeft = scrollbar;
-//     });
-//     document.querySelector('[href="#close3"]').addEventListener('click',function(){
-//       document.body.style.overflow = 'visible';
-//       document.querySelector('#openModal3').style.marginLeft = '0px';
-//     });
-// });
-
-// document.addEventListener("DOMContentLoaded", function(){
-//     var scrollbar = document.body.clientWidth - window.innerWidth + 'px';
-//     console.log(scrollbar);
-//     document.querySelector('[href="#openModal4"]').addEventListener('click',function(){
-//       document.body.style.overflow = 'hidden';
-//       document.querySelector('#openModal4').style.marginLeft = scrollbar;
-//     });
-//     document.querySelector('[href="#close4"]').addEventListener('click',function(){
-//       document.body.style.overflow = 'visible';
-//       document.querySelector('#openModal4').style.marginLeft = '0px';
-//     });
-// });
-
 $(function(){
 	function showModal(id){
 		$(document.body).addClass('is-open-modal');
@@ -76,4 +24,20 @@ $(function(){
 		}
 	});
 	
+});
+
+$(document).ready(function(){
+	$(".menu").on("click","a", function (event) {
+		//отменяем стандартную обработку нажатия по ссылке
+		event.preventDefault();
+
+		//забираем идентификатор бока с атрибута href
+		var id  = $(this).attr('href'),
+
+		//узнаем высоту от начала страницы до блока на который ссылается якорь
+			top = $(id).offset().top;
+		
+		//анимируем переход на расстояние - top за 1000 мс
+		$('body,html').animate({scrollTop: top-50}, 1000);
+	});
 });

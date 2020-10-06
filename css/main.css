@@ -85,33 +85,70 @@ p {
   display: flex;
   width: 350px;
   background-color: #616f7b;
-  background: linear-gradient(77deg, #616f7b 86%, transparent 86.2%, transparent 86.4%, #c46907 86.8%, #c46907 87.6%, transparent 87.8%) no-repeat right top/cover;
+  background: linear-gradient(77deg, #616f7b 86%, transparent 86.2%, transparent 86.4%, #ec7900 86.8%, #ec7900 87.6%, transparent 87.8%) no-repeat right top/cover;
   color: #ffffff;
   font-size: 18px;
   font-weight: 300;
   text-decoration: none;
   text-transform: uppercase;
   padding: 20px 0 20px 40px;
-  transition: .2s;
   margin: 30px 0 40px 0;
   margin-left: auto;
   border: none;
   font: 300 18px 'Open Sans';
   outline: none;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
 }
 
-.btn:hover {
-  background: linear-gradient(77deg, #c46907 86%, transparent 86.2%, transparent 86.4%, #c46907 86.8%, #c46907 87.6%, transparent 87.8%) no-repeat right top/cover;
+.btn:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(77deg, #ec7900 86%, transparent 86.2%, transparent 86.4%, #ec7900 86.8%, #ec7900 87.6%, transparent 87.8%) no-repeat right top/cover;
+  transition: opacity 0.2s ease-out;
+  z-index: 2;
+  opacity: 0;
+}
+
+.btn:hover::before {
+  opacity: 1;
+}
+
+.btn span {
+  position: relative;
+  z-index: 3;
 }
 
 .btn--reverse {
   justify-content: center;
-  background: linear-gradient(77deg, transparent 12.2%, #c46907 12.4%, #c46907 13.2%, transparent 13.6%, transparent 13.8%, #616f7b 14%) no-repeat right top/cover;
+  background: linear-gradient(77deg, transparent 12.2%, #ec7900 12.4%, #ec7900 13.2%, transparent 13.6%, transparent 13.8%, #616f7b 14%) no-repeat right top/cover;
 }
 
-.btn--reverse:hover {
-  background: linear-gradient(77deg, transparent 12.2%, #c46907 12.4%, #c46907 13.2%, transparent 13.6%, transparent 13.8%, #c46907 14%) no-repeat right top/cover;
+.btn--reverse:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(77deg, transparent 12.2%, #ec7900 12.4%, #ec7900 13.2%, transparent 13.6%, transparent 13.8%, #ec7900 14%) no-repeat right top/cover;
+  transition: opacity 0.2s ease-out;
+  z-index: 2;
+  opacity: 0;
+}
+
+.btn--reverse:hover::before {
+  opacity: 1;
+}
+
+.btn--reverse span {
+  position: relative;
+  z-index: 3;
 }
 
 .btn--order {
@@ -125,7 +162,7 @@ p {
 }
 
 .btn--order:hover {
-  background: #c46907;
+  background: #ec7900;
 }
 
 .first-title {
@@ -548,7 +585,7 @@ p {
 
 .hamb__block {
   padding: 0 30px 20px;
-  border-bottom: 2px solid #c46907;
+  border-bottom: 2px solid #ec7900;
 }
 
 .hamb__block:last-of-type {
@@ -583,10 +620,16 @@ p {
     background: #616f7b;
     box-shadow: 0 3px 0 #ffffff, 0 5px 0 #fa982d;
     padding: 20px 0;
+    transition: 0.2s;
+    justify-content: center;
+  }
+
+  .btn:before {
+    display: none;
   }
 
   .btn:hover {
-    background: #c46907;
+    background: #ec7900;
   }
 
   .contact {
@@ -646,6 +689,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    text-align: end;
   }
 
   .menu-footer .menu__link {
@@ -676,6 +720,7 @@ p {
 
   .second-title {
     margin-bottom: 60px;
+    font-size: 36px;
   }
 
   .menu {
@@ -750,6 +795,9 @@ p {
     bottom: 30px;
     text-align: center;
     padding: 0 20px;
+    width: 100%;
+    left: 50%;
+    margin-left: -250px;
   }
 
   .hamburger {
