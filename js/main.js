@@ -1,4 +1,4 @@
-$(function(){
+$(document).ready(function(){
 	function showModal(id){
 		$(document.body).addClass('is-open-modal');
 		$(id).addClass('is-open');
@@ -12,7 +12,7 @@ $(function(){
 	$(".modal-open").on('click', function(e){
 		console.log(e);
 		showModal('#modal1');
- });
+    });
 	
 	$(document).on('click', function(e){
 		if (!(

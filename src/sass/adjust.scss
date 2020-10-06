@@ -87,10 +87,7 @@ p {
   text-decoration: none;
   text-transform: uppercase;
   padding: 20px 0 20px 40px;
-  // transition: background 3s, ease-out 2.5s;
-  // transition-delay: 2.2s;
   margin: 30px 0 40px 0;
-  margin-left: auto;
   border: none;
   font: 300 18px 'Open Sans';
   outline: none;
@@ -147,6 +144,7 @@ p {
   // }
 
   &--reverse{
+    margin-left: auto;
     justify-content: center;
     background: linear-gradient( 77deg, transparent 12.2%, $orange-bg 12.4%, $orange-bg 13.2%, transparent 13.6%, transparent 13.8%, $gray-bg 14%) no-repeat right top / cover;
   

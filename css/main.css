@@ -93,7 +93,6 @@ p {
   text-transform: uppercase;
   padding: 20px 0 20px 40px;
   margin: 30px 0 40px 0;
-  margin-left: auto;
   border: none;
   font: 300 18px 'Open Sans';
   outline: none;
@@ -125,6 +124,7 @@ p {
 }
 
 .btn--reverse {
+  margin-left: auto;
   justify-content: center;
   background: linear-gradient(77deg, transparent 12.2%, #ec7900 12.4%, #ec7900 13.2%, transparent 13.6%, transparent 13.8%, #616f7b 14%) no-repeat right top/cover;
 }
