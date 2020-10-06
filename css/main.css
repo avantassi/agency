@@ -797,7 +797,8 @@ p {
     padding: 0 20px;
     width: 100%;
     left: 50%;
-    margin-left: -250px;
+    margin-left: -245px;
+    max-width: 490px;
   }
 
   .hamburger {
