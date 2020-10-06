@@ -4,8 +4,21 @@
     margin-top: 30px;
     overflow: hidden;
 
+    @include tablets{
+        padding-bottom: 280px;
+        position: relative;
+    }
+
     .container{
         align-items: flex-start;
+
+        @include notebook{
+            padding: 0 15px;
+        }
+
+        @include tablets{
+            position: initial;
+        }
     }
 
     .menu-block{
@@ -16,7 +29,6 @@
 }
 
 .logo-block{
-    // background-color: $orange-bg-rgba;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -30,24 +42,11 @@
         top: 0;
         height: 100%;
         background-color: $orange-bg-rgba;
-    }
 
-    // &:after{
-    //     content: '';
-    //     display: block;
-    //     position: absolute;
-    //     // border-top: 81px solid transparent;
-    //     // border-left: 45px solid $orange-bg-rgba;
-    //     // border-bottom: 140px solid transparent;
-    //     // right: -45px;
-    //     // top: -26px;
-    //     clip-path: polygon(0 0, 0% 100%, 22% 30%);
-    //     background-color: rgba(255, 126, 0, 0.8);
-    //     right: -200px;
-    //     height: 100%;
-    //     top: 0;
-    //     width: 200px;
-    // }
+        @include tablets{
+            display: none;
+        }
+    }
 
     .logo{
         display: block;
@@ -55,19 +54,9 @@
         width: 133%;
         background: linear-gradient( 70deg, $orange-bg-rgba 87.6%, transparent 87.8%) no-repeat right top / cover;
 
-        // z-index: 10;
-
-        // &:after{
-        //     content: '';
-        //     display: block;
-        //     position: absolute;
-        //     background: linear-gradient( 77deg, $orange-bg-rgba 87.6%, transparent 87.8%) no-repeat right top / cover;
-        //     height: 29%;
-        //     right: -25%;
-        //     width: 160px;
-        //     top: 0;
-        //     z-index: 5;
-        // }
+        @include tablets{
+            background: transparent;
+        }
     }
 
     .logo-block__descr{
@@ -75,6 +64,36 @@
         width: 140%;
         padding-top: 50px;
         height: 233px;
+
+        @include notebook{
+            height: 330px;
+            width: 133%;
+            background: linear-gradient(107deg, rgba(255, 126, 0, 0.8) 72.6%, transparent 72.8%) no-repeat right top/cover;
+        }
+
+        &:before{
+
+            @include tablets{
+                content: '';
+                display: block;
+                position: absolute;
+                width: 1000%;
+                left: -1000%;
+                top: 0;
+                height: 100%;
+                background-color: $orange-bg-rgba;
+            }
+        }
+
+        @include tablets{
+            background: $orange-bg-rgba;
+            position: relative;
+            width: 100%;
+            text-align: right;
+            height: auto;
+            padding: 30px 30px 30px 0;
+            margin-top: 40px;
+        }
     }
 
     .contact__descr{
@@ -85,11 +104,21 @@
         font-size: 18px;
         margin: 10px 0 100px;
         display: block;
+
+        @include tablets{
+            margin-bottom: 0;
+        }
     }
 }
 
 .menu-footer{
     padding-top: 35px;
+
+    @include notebook{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
     
     .menu__link{
         font-size: 24px;
@@ -99,6 +128,10 @@
         padding-right: 0;
         padding-left: 60px;
 
+        @include notebook{
+            padding-bottom: 20px;
+        }
+
         &:hover{
             text-decoration: none;
         }
@@ -107,9 +140,27 @@
 
 .social{
     padding: 50px 0 70px;
+    display: flex;
+
+    &--footer{
+
+        @include notebook{
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        @include tablets{
+            position: absolute;
+            left: 50%;
+            margin-left: -190px;
+            top: 290px;
+            padding: 0 0 50px;
+        }
+    }
 
     &__link{
         padding-left: 20px;
+        display: block;
     }
 }
 
@@ -117,4 +168,11 @@
     text-align: right;
     padding-left: 130px;
     padding-bottom: 20px;
+
+    @include tablets{
+        position: absolute;
+        bottom: 30px;
+        text-align: center;
+        padding: 0 20px;
+    }
 }

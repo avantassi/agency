@@ -1,5 +1,5 @@
-$notebook: 970px;
-$tablets: 768px;
+$notebook: 1000px;
+$tablets: 930px;
 $phones: 500px;
 
 @import "media.scss";
@@ -14,3 +14,6 @@ $phones: 500px;
 @import "service.scss";
 
 @import "footer.scss";
+
+@import "modal.scss";
+@import "hamburger.scss";

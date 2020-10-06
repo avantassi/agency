@@ -9,6 +9,10 @@
     margin-bottom: 40px;
     overflow: hidden;
 
+    @include notebook{
+        padding-top: 0;
+    }
+
     &:last-of-type{
         margin-bottom: 0;
     }
@@ -19,10 +23,37 @@
 
     &__wrap{
         display: flex;
+
+        @include notebook{
+            flex-direction: column-reverse;
+
+            .container{
+                align-items: center;
+            }
+        }
+
+        &--reverse{
+
+            @include notebook{
+                flex-direction: column;
+            }
+        }
     }
 
     &__descr-wrap{
         max-width: 45%;
+
+        @include notebook{
+            max-width: 95%;
+            background: rgba(255, 255, 255, .8);
+            padding: 0 15px;
+            margin-top: -125px;
+            z-index: 10;
+
+            .second-title{
+                text-align: center;
+            }
+        }
     }
 
     &__descr{
@@ -37,10 +68,26 @@
         right: 0;
         max-width: 50%;
         top: 0;
+        display: block;
+
+        @include notebook{
+            display: none;
+        }
 
         &--reverse{
             right: auto;
             left: 0;
+        }
+
+        &--mob{
+            display: none;
+
+            @include notebook{
+                display: block;
+                position: relative;
+                max-width: none;
+                width: 100%;
+            }
         }
     }
 }
