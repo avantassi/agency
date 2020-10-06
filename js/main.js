@@ -27,7 +27,7 @@ $(function(){
 });
 
 $(document).ready(function(){
-	$(".menu").on("click","a", function (event) {
+	$(".menu, .menu-footer, .hamb__block").on("click","a", function (event) {
 		//отменяем стандартную обработку нажатия по ссылке
 		event.preventDefault();
 
